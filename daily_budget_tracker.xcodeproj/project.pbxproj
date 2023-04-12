@@ -13,6 +13,7 @@
 		DAE962C829E64100006C7126 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE962C629E64100006C7126 /* Main.storyboard */; };
 		DAE962CA29E64101006C7126 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE962C929E64101006C7126 /* Assets.xcassets */; };
 		DAE962CD29E64101006C7126 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE962CB29E64101006C7126 /* LaunchScreen.storyboard */; };
+		DAE962D629E64B9B006C7126 /* ParseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DAE962D529E64B9B006C7126 /* ParseSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAE962D629E64B9B006C7126 /* ParseSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = daily_budget_tracker;
+			packageProductDependencies = (
+				DAE962D529E64B9B006C7126 /* ParseSwift */,
+			);
 			productName = daily_budget_tracker;
 			productReference = DAE962BD29E64100006C7126 /* daily_budget_tracker.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = DAE962B429E64100006C7126;
+			packageReferences = (
+				DAE962D429E64B9B006C7126 /* XCRemoteSwiftPackageReference "Parse-Swift" */,
+			);
 			productRefGroup = DAE962BE29E64100006C7126 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -356,6 +364,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DAE962D429E64B9B006C7126 /* XCRemoteSwiftPackageReference "Parse-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/parse-community/Parse-Swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 4.14.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DAE962D529E64B9B006C7126 /* ParseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DAE962D429E64B9B006C7126 /* XCRemoteSwiftPackageReference "Parse-Swift" */;
+			productName = ParseSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DAE962B529E64100006C7126 /* Project object */;
 }
