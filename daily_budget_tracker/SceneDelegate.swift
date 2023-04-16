@@ -9,14 +9,59 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
-    var window: UIWindow?
+    private enum Constants {
+        static let loginNavigationControllerIdentifier = "LoginNavigationController"
+        static let mainNavigationControllerIdentifier = "mainNavigationController"
+        static let storyboardIdentifier = "Main"
+    }
 
+    var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+
+        NotificationCenter.default.addObserver(forName: Notification.Name("login"), object: nil, queue: OperationQueue.main) { [weak self] _ in
+            self?.login()
+        }
+
+        NotificationCenter.default.addObserver(forName: Notification.Name("logout"), object: nil, queue: OperationQueue.main) { [weak self] _ in
+            self?.logOut()
+        }
+
+        // TODO: Pt 1 - Check for cached user for persisted log in.
+        // Check if a current user exists
+        if User.current != nil {
+            login()
+        }
+    }
+    
+    private func login() {
+        let storyboard = UIStoryboard(name: Constants.storyboardIdentifier, bundle: nil)
+        self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: Constants.mainNavigationControllerIdentifier)
+    }
+
+    private func logOut() {
+        User.logout { [weak self] result in
+
+            switch result {
+            case .success:
+
+                DispatchQueue.main.async {
+
+                    let storyboard = UIStoryboard(name: Constants.storyboardIdentifier, bundle: nil)
+
+                    let viewController = storyboard.instantiateViewController(withIdentifier: Constants.loginNavigationControllerIdentifier)
+
+                    self?.window?.rootViewController = viewController
+                }
+            case .failure(let error):
+                print("❌ Log out error: \(error)")
+            }
+        }
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

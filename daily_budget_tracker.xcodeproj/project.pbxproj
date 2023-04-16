@@ -14,6 +14,10 @@
 		DAE962CA29E64101006C7126 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE962C929E64101006C7126 /* Assets.xcassets */; };
 		DAE962CD29E64101006C7126 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE962CB29E64101006C7126 /* LaunchScreen.storyboard */; };
 		DAE962D629E64B9B006C7126 /* ParseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DAE962D529E64B9B006C7126 /* ParseSwift */; };
+		DAE962DA29EC677A006C7126 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE962D929EC677A006C7126 /* User.swift */; };
+		DAE962DD29EC8F89006C7126 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE962DC29EC8F89006C7126 /* LoginViewController.swift */; };
+		DAE962DF29EC8F9A006C7126 /* SignUpViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE962DE29EC8F9A006C7126 /* SignUpViewViewController.swift */; };
+		DAE962E529EC973B006C7126 /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE962E429EC973B006C7126 /* mainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,10 @@
 		DAE962C929E64101006C7126 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAE962CC29E64101006C7126 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAE962CE29E64101006C7126 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAE962D929EC677A006C7126 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DAE962DC29EC8F89006C7126 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DAE962DE29EC8F9A006C7126 /* SignUpViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewViewController.swift; sourceTree = "<group>"; };
+		DAE962E429EC973B006C7126 /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,9 @@
 		DAE962BF29E64100006C7126 /* daily_budget_tracker */ = {
 			isa = PBXGroup;
 			children = (
+				DAE962E329EC972F006C7126 /* Main */,
+				DAE962DB29EC8F71006C7126 /* Login */,
+				DAE962D829EC675E006C7126 /* Models */,
 				DAE962C029E64100006C7126 /* AppDelegate.swift */,
 				DAE962C229E64100006C7126 /* SceneDelegate.swift */,
 				DAE962C429E64100006C7126 /* ViewController.swift */,
@@ -67,6 +78,31 @@
 				DAE962CE29E64101006C7126 /* Info.plist */,
 			);
 			path = daily_budget_tracker;
+			sourceTree = "<group>";
+		};
+		DAE962D829EC675E006C7126 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DAE962D929EC677A006C7126 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DAE962DB29EC8F71006C7126 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				DAE962DC29EC8F89006C7126 /* LoginViewController.swift */,
+				DAE962DE29EC8F9A006C7126 /* SignUpViewViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		DAE962E329EC972F006C7126 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DAE962E429EC973B006C7126 /* mainViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,8 +182,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAE962DA29EC677A006C7126 /* User.swift in Sources */,
+				DAE962DF29EC8F9A006C7126 /* SignUpViewViewController.swift in Sources */,
+				DAE962E529EC973B006C7126 /* mainViewController.swift in Sources */,
 				DAE962C529E64100006C7126 /* ViewController.swift in Sources */,
 				DAE962C129E64100006C7126 /* AppDelegate.swift in Sources */,
+				DAE962DD29EC8F89006C7126 /* LoginViewController.swift in Sources */,
 				DAE962C329E64100006C7126 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
