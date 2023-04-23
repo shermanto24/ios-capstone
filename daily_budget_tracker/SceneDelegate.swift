@@ -11,7 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     private enum Constants {
         static let loginNavigationControllerIdentifier = "LoginNavigationController"
-        static let mainNavigationControllerIdentifier = "mainNavigationController"
+        static let mainTabBarControllerIdentifier = "MainTabBarController"
         static let storyboardIdentifier = "Main"
     }
 
@@ -40,7 +40,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private func login() {
         let storyboard = UIStoryboard(name: Constants.storyboardIdentifier, bundle: nil)
-        self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: Constants.mainNavigationControllerIdentifier)
+        self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: Constants.mainTabBarControllerIdentifier)
     }
 
     private func logOut() {

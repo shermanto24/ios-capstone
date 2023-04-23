@@ -8,7 +8,7 @@
 import UIKit
 import ParseSwift
 
-class SignUpViewViewController: UIViewController {
+class SignUpViewController: UIViewController {
     
     @IBOutlet weak var usernameField: UITextField!
     
