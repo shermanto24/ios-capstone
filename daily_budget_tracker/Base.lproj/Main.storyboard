@@ -119,7 +119,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="666"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="509" id="G89-Ni-xva" userLabel="PurchaseCell">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PurchaseCell" rowHeight="509" id="G89-Ni-xva" userLabel="PurchaseCell" customClass="PurchaseCell" customModule="daily_budget_tracker" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="393" height="509"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G89-Ni-xva" id="XRP-4a-g2u">
@@ -172,6 +172,12 @@
                                                         <constraint firstAttribute="trailing" secondItem="RB8-PK-hB5" secondAttribute="trailing" constant="16" id="rEJ-CZ-MKy"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="costLabel" destination="fCU-AY-hZT" id="Xog-SB-9zE"/>
+                                                    <outlet property="descriptionLabel" destination="F1M-9a-sin" id="Fs8-FG-oqN"/>
+                                                    <outlet property="purchaseImageView" destination="bVB-xl-yl9" id="2eJ-Ba-Sge"/>
+                                                    <outlet property="titleLabel" destination="Y7Q-q1-qmR" id="Joz-Ve-grV"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
@@ -205,6 +211,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="5QA-9Y-nY6" id="YaB-0l-DTq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dlt-Fv-g6X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -274,25 +283,45 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="R2D-Sv-4dg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="R2D-Sv-4dg" firstAttribute="trailing" secondItem="UQR-ha-R5v" secondAttribute="trailing" constant="16" id="FLp-En-JHr"/>
                             <constraint firstItem="UQR-ha-R5v" firstAttribute="top" secondItem="R2D-Sv-4dg" secondAttribute="top" constant="30" id="SkN-JU-w3e"/>
                             <constraint firstItem="UQR-ha-R5v" firstAttribute="leading" secondItem="lBP-bT-YvJ" secondAttribute="leading" constant="16" id="atk-7p-4Pn"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="3nn-oX-U8R" appends="YES" id="QgE-kE-TG1"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="DJh-2D-8x0">
                         <rightBarButtonItems>
-                            <barButtonItem title="Upload" id="49t-r2-bxS" userLabel="Upload Button"/>
-                            <barButtonItem title="Item" image="camera" catalog="system" id="RlB-e0-Nib" userLabel="Camera Button">
+                            <barButtonItem title="Upload" id="49t-r2-bxS" userLabel="Upload Button">
                                 <connections>
-                                    <action selector="onTakePhotoTapped:" destination="Tmh-sY-Xxo" id="1iD-6z-Qx0"/>
+                                    <action selector="onUploadTapped:" destination="Tmh-sY-Xxo" id="OSS-Mk-viz"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="photo" catalog="system" id="UDH-Ga-oQU" userLabel="Pick Image Button"/>
+                            <barButtonItem title="Item" image="camera" catalog="system" id="RlB-e0-Nib" userLabel="Camera Button"/>
+                            <barButtonItem image="photo" catalog="system" id="UDH-Ga-oQU" userLabel="Pick Image Button">
+                                <connections>
+                                    <action selector="onPickedImageTapped:" destination="Tmh-sY-Xxo" id="Qp2-jA-GBO"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="costTextField" destination="lJ7-ut-cN7" id="NmH-S2-yfc"/>
+                        <outlet property="descriptionTextField" destination="6pq-1i-wjI" id="Jcq-CU-pWz"/>
+                        <outlet property="previewImageView" destination="EDZ-E7-h97" id="lcV-Vh-Que"/>
+                        <outlet property="titleTextField" destination="6LT-By-gfu" id="77T-b5-fbn"/>
+                        <outlet property="uploadButton" destination="49t-r2-bxS" id="90o-cH-tMH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xB2-lk-ogK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="3nn-oX-U8R">
+                    <connections>
+                        <action selector="onViewTapped:" destination="Tmh-sY-Xxo" id="4uP-oN-SPo"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1910.6870229007632" y="807.74647887323943"/>
         </scene>

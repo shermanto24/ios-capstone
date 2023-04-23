@@ -6,20 +6,57 @@
 //
 
 import UIKit
+import ParseSwift
 
 class MainViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var tableView: UITableView!
+    private var posts = [Post]() {
+        didSet {
+            tableView.reloadData()
+            
+        }
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.allowsSelection = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        queryPosts()
+    }
+    private func queryPosts() {
+        let query = Post.query()
+            .include("user")
+            .order([.descending("createdAt")])
+
+        // Fetch objects (posts) defined in query (async)
+        query.find { [weak self] result in
+            switch result {
+            case .success(let posts):
+                // Update local posts property with fetched posts
+                self?.posts = posts
+            case .failure(let error):
+                self?.showAlert(description: error.localizedDescription)
+            }
+        }
+
+    }
     // NOT WORKING
     @IBAction func onLogOutTapped(_ sender: Any) {
         showConfirmLogoutAlert()
     }
-    
+    private func showAlert(description: String? = nil) {
+        let alertController = UIAlertController(title: "Oops...", message: "\(description ?? "Please try again...")", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default)
+        alertController.addAction(action)
+        present(alertController, animated: true)
+    }
     
     private func showConfirmLogoutAlert() {
         let alertController = UIAlertController(title: "Log out of \(User.current?.username ?? "current account")?", message: nil, preferredStyle: .alert)
@@ -33,3 +70,19 @@ class MainViewController: UIViewController {
     }
 
 }
+
+extension MainViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PurchaseCell", for: indexPath) as? PurchaseCell else {
+            return UITableViewCell()
+        }
+        cell.configure(with: posts[indexPath.row])
+        return cell
+    }
+}
+
+extension MainViewController: UITableViewDelegate { }

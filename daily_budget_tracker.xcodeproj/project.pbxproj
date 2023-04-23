@@ -19,6 +19,10 @@
 		DAE962DD29EC8F89006C7126 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE962DC29EC8F89006C7126 /* LoginViewController.swift */; };
 		DAE962DF29EC8F9A006C7126 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE962DE29EC8F9A006C7126 /* SignUpViewController.swift */; };
 		DAE962E529EC973B006C7126 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE962E429EC973B006C7126 /* MainViewController.swift */; };
+		DAE962F029F5DD9B006C7126 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DAE962EF29F5DD9B006C7126 /* Alamofire */; };
+		DAE962F329F5DDAC006C7126 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = DAE962F229F5DDAC006C7126 /* AlamofireImage */; };
+		DAE962F729F5E02E006C7126 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE962F629F5E02E006C7126 /* Post.swift */; };
+		DAE962F929F5E2E4006C7126 /* PurchaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE962F829F5E2E4006C7126 /* PurchaseCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +39,8 @@
 		DAE962DC29EC8F89006C7126 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DAE962DE29EC8F9A006C7126 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		DAE962E429EC973B006C7126 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		DAE962F629F5E02E006C7126 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		DAE962F829F5E2E4006C7126 /* PurchaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +49,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAE962D629E64B9B006C7126 /* ParseSwift in Frameworks */,
+				DAE962F029F5DD9B006C7126 /* Alamofire in Frameworks */,
+				DAE962F329F5DDAC006C7126 /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				DAE962D929EC677A006C7126 /* User.swift */,
+				DAE962F629F5E02E006C7126 /* Post.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -112,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				DAE962E429EC973B006C7126 /* MainViewController.swift */,
+				DAE962F829F5E2E4006C7126 /* PurchaseCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -134,6 +144,8 @@
 			name = daily_budget_tracker;
 			packageProductDependencies = (
 				DAE962D529E64B9B006C7126 /* ParseSwift */,
+				DAE962EF29F5DD9B006C7126 /* Alamofire */,
+				DAE962F229F5DDAC006C7126 /* AlamofireImage */,
 			);
 			productName = daily_budget_tracker;
 			productReference = DAE962BD29E64100006C7126 /* daily_budget_tracker.app */;
@@ -165,6 +177,8 @@
 			mainGroup = DAE962B429E64100006C7126;
 			packageReferences = (
 				DAE962D429E64B9B006C7126 /* XCRemoteSwiftPackageReference "Parse-Swift" */,
+				DAE962EE29F5DD9B006C7126 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				DAE962F129F5DDAC006C7126 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 			);
 			productRefGroup = DAE962BE29E64100006C7126 /* Products */;
 			projectDirPath = "";
@@ -195,12 +209,14 @@
 			files = (
 				DAE962DA29EC677A006C7126 /* User.swift in Sources */,
 				DAE962DF29EC8F9A006C7126 /* SignUpViewController.swift in Sources */,
+				DAE962F929F5E2E4006C7126 /* PurchaseCell.swift in Sources */,
 				DAE962E529EC973B006C7126 /* MainViewController.swift in Sources */,
 				DAE962C529E64100006C7126 /* ViewController.swift in Sources */,
 				922D6F9D29F5C6230000E608 /* PurchaseViewController.swift in Sources */,
 				DAE962C129E64100006C7126 /* AppDelegate.swift in Sources */,
 				DAE962DD29EC8F89006C7126 /* LoginViewController.swift in Sources */,
 				DAE962C329E64100006C7126 /* SceneDelegate.swift in Sources */,
+				DAE962F729F5E02E006C7126 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +442,22 @@
 				version = 4.14.2;
 			};
 		};
+		DAE962EE29F5DD9B006C7126 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.6.4;
+			};
+		};
+		DAE962F129F5DDAC006C7126 /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				kind = exactVersion;
+				version = 4.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -433,6 +465,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DAE962D429E64B9B006C7126 /* XCRemoteSwiftPackageReference "Parse-Swift" */;
 			productName = ParseSwift;
+		};
+		DAE962EF29F5DD9B006C7126 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DAE962EE29F5DD9B006C7126 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		DAE962F229F5DDAC006C7126 /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DAE962F129F5DDAC006C7126 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

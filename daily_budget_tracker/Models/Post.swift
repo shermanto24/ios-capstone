@@ -2,7 +2,7 @@
 //  Post.swift
 //  daily_budget_tracker
 //
-//  Created by Minseo Cho on 4/18/23.
+//  Created by Minseo Cho on 4/23/23.
 //
 
 import Foundation
@@ -16,6 +16,7 @@ struct Post: ParseObject {
     var originalData: Data?
 
     var caption: String?
-    var user: User?
+    var title: String?
     var imageFile: ParseFile?
+    var cost: String?
 }
