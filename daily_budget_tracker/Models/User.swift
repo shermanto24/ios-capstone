@@ -29,4 +29,6 @@ struct User: ParseUser {
     
     var ACL: ParseSwift.ParseACL?
     
+    var timePosted: Date?
+    
 }

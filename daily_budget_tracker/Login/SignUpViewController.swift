@@ -9,6 +9,7 @@ import UIKit
 import ParseSwift
 
 class SignUpViewController: UIViewController {
+
     
     @IBOutlet weak var usernameField: UITextField!
     
@@ -20,8 +21,7 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-   
-    
+  
     @IBAction func onSignUpTapped(_ sender: Any) {
         guard let username = usernameField.text,
               let email = emailField.text,
@@ -51,7 +51,7 @@ class SignUpViewController: UIViewController {
             }
         }
     }
-
+    
     private func showErrorAlert(description: String?) {
         let alertController = UIAlertController(title: "Unable to Sign Up", message: description ?? "Unknown error", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default)
@@ -66,4 +66,7 @@ class SignUpViewController: UIViewController {
         present(alertController, animated: true)
     }
 }
+    
+
+        
 

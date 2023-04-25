@@ -19,4 +19,5 @@ struct Post: ParseObject {
     var title: String?
     var imageFile: ParseFile?
     var cost: String?
+    var user: User?
 }

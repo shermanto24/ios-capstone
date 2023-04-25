@@ -112,91 +112,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Vn9-nk-ebX" userLabel="All Items Stack View">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
-                                <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5QA-9Y-nY6">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="666"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PurchaseCell" rowHeight="509" id="G89-Ni-xva" userLabel="PurchaseCell" customClass="PurchaseCell" customModule="daily_budget_tracker" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="50" width="393" height="509"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G89-Ni-xva" id="XRP-4a-g2u">
-                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="509"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="RB8-PK-hB5">
-                                                            <rect key="frame" x="16" y="16" width="361" height="477"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Purchase Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7Q-q1-qmR" userLabel="Title Label">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="361" height="50.333333333333336"/>
-                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bVB-xl-yl9" userLabel="Purchase Image View">
-                                                                    <rect key="frame" x="0.0" y="62.333333333333314" width="361" height="361"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" secondItem="bVB-xl-yl9" secondAttribute="height" multiplier="1:1" id="Pag-Kx-WIf"/>
-                                                                        <constraint firstAttribute="height" constant="360" id="rUS-H2-0Kk"/>
-                                                                    </constraints>
-                                                                </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1M-9a-sin" userLabel="Description Label">
-                                                                    <rect key="frame" x="0.0" y="424.33333333333331" width="361" height="20.333333333333314"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCU-AY-hZT" userLabel="Cost Label">
-                                                                    <rect key="frame" x="0.0" y="456.66666666666669" width="361" height="20.333333333333314"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstItem="F1M-9a-sin" firstAttribute="width" secondItem="Y7Q-q1-qmR" secondAttribute="width" id="2Bx-nT-hmw"/>
-                                                                <constraint firstItem="bVB-xl-yl9" firstAttribute="leading" secondItem="RB8-PK-hB5" secondAttribute="leading" id="Aja-zu-QNU"/>
-                                                                <constraint firstAttribute="trailing" secondItem="bVB-xl-yl9" secondAttribute="trailing" id="hjO-bf-Mrx"/>
-                                                                <constraint firstItem="F1M-9a-sin" firstAttribute="top" secondItem="bVB-xl-yl9" secondAttribute="bottom" constant="1" id="jRM-XN-cXO"/>
-                                                                <constraint firstItem="bVB-xl-yl9" firstAttribute="width" secondItem="Y7Q-q1-qmR" secondAttribute="width" id="lwb-on-QUT"/>
-                                                                <constraint firstItem="fCU-AY-hZT" firstAttribute="width" secondItem="Y7Q-q1-qmR" secondAttribute="width" id="tLf-ZC-p5Q"/>
-                                                            </constraints>
-                                                        </stackView>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="RB8-PK-hB5" secondAttribute="bottom" constant="16" id="3Le-cH-abh"/>
-                                                        <constraint firstItem="RB8-PK-hB5" firstAttribute="leading" secondItem="XRP-4a-g2u" secondAttribute="leading" constant="16" id="6iT-nC-sjs"/>
-                                                        <constraint firstItem="RB8-PK-hB5" firstAttribute="top" secondItem="XRP-4a-g2u" secondAttribute="top" constant="16" id="nbc-c0-z9w"/>
-                                                        <constraint firstAttribute="trailing" secondItem="RB8-PK-hB5" secondAttribute="trailing" constant="16" id="rEJ-CZ-MKy"/>
-                                                    </constraints>
-                                                </tableViewCellContentView>
-                                                <connections>
-                                                    <outlet property="costLabel" destination="fCU-AY-hZT" id="Xog-SB-9zE"/>
-                                                    <outlet property="descriptionLabel" destination="F1M-9a-sin" id="Fs8-FG-oqN"/>
-                                                    <outlet property="purchaseImageView" destination="bVB-xl-yl9" id="2eJ-Ba-Sge"/>
-                                                    <outlet property="titleLabel" destination="Y7Q-q1-qmR" id="Joz-Ve-grV"/>
-                                                </connections>
-                                            </tableViewCell>
-                                        </prototypes>
-                                    </tableView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="5QA-9Y-nY6" firstAttribute="leading" secondItem="Vn9-nk-ebX" secondAttribute="leading" id="Itf-sM-Xzo"/>
-                                    <constraint firstAttribute="trailing" secondItem="5QA-9Y-nY6" secondAttribute="trailing" id="JgH-qr-tKg"/>
-                                    <constraint firstAttribute="bottom" secondItem="5QA-9Y-nY6" secondAttribute="bottom" id="d9j-Ic-V87"/>
-                                </constraints>
-                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5QA-9Y-nY6">
+                                <rect key="frame" x="0.0" y="187" width="393" height="582"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PurchaseCell" rowHeight="509" id="G89-Ni-xva" userLabel="PurchaseCell" customClass="PurchaseCell" customModule="daily_budget_tracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="509"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G89-Ni-xva" id="XRP-4a-g2u">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="509"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Purchase Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7Q-q1-qmR" userLabel="Title Label">
+                                                    <rect key="frame" x="16" y="128" width="120" height="41"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bVB-xl-yl9" userLabel="Purchase Image View">
+                                                    <rect key="frame" x="16" y="169.33333333333337" width="278" height="283"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1M-9a-sin" userLabel="Description Label">
+                                                    <rect key="frame" x="16" y="452.33333333333331" width="87.333333333333329" height="20.333333333333314"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCU-AY-hZT" userLabel="Cost Label">
+                                                    <rect key="frame" x="16" y="472.66666666666669" width="35.666666666666664" height="20.333333333333314"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="costLabel" destination="fCU-AY-hZT" id="Xog-SB-9zE"/>
+                                            <outlet property="descriptionLabel" destination="F1M-9a-sin" id="Fs8-FG-oqN"/>
+                                            <outlet property="purchaseImageView" destination="bVB-xl-yl9" id="2eJ-Ba-Sge"/>
+                                            <outlet property="titleLabel" destination="Y7Q-q1-qmR" id="Joz-Ve-grV"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Spent Today:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IG3-Nf-Kgo">
+                                <rect key="frame" x="16" y="141" width="141" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XlQ-IM-dbC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="XlQ-IM-dbC" firstAttribute="bottom" secondItem="Vn9-nk-ebX" secondAttribute="bottom" id="Bht-KD-lWJ"/>
-                            <constraint firstItem="Vn9-nk-ebX" firstAttribute="top" secondItem="XlQ-IM-dbC" secondAttribute="top" id="FuM-oK-AYQ"/>
-                            <constraint firstAttribute="trailing" secondItem="Vn9-nk-ebX" secondAttribute="trailing" id="LVt-LA-4VC"/>
-                            <constraint firstItem="Vn9-nk-ebX" firstAttribute="leading" secondItem="yPg-ib-MYX" secondAttribute="leading" id="g4h-24-R6X"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Total Spent: $0.00" id="z3w-g9-Qx6" userLabel="Total Spent Title">
                         <barButtonItem key="backBarButtonItem" title=" " id="WD6-81-w1H"/>
@@ -308,13 +281,6 @@
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
-                    <connections>
-                        <outlet property="costTextField" destination="lJ7-ut-cN7" id="NmH-S2-yfc"/>
-                        <outlet property="descriptionTextField" destination="6pq-1i-wjI" id="Jcq-CU-pWz"/>
-                        <outlet property="previewImageView" destination="EDZ-E7-h97" id="lcV-Vh-Que"/>
-                        <outlet property="titleTextField" destination="6LT-By-gfu" id="77T-b5-fbn"/>
-                        <outlet property="uploadButton" destination="49t-r2-bxS" id="90o-cH-tMH"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xB2-lk-ogK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="3nn-oX-U8R">
@@ -381,7 +347,7 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="onLogOutTapped:" destination="SIB-wt-WPM" eventType="touchUpInside" id="2CV-Gc-qzt"/>
-                                            <action selector="onSignUpTapped:" destination="vnA-dK-VjJ" eventType="touchUpInside" id="Psl-EJ-Ldl"/>
+                                            <action selector="onSignUpTapped:" destination="vnA-dK-VjJ" eventType="touchUpInside" id="4YJ-OL-i7E"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -402,9 +368,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="JQi-8b-VsI"/>
                     <connections>
-                        <outlet property="emailField" destination="DDz-ma-1ce" id="NN8-1c-AtR"/>
-                        <outlet property="passwordField" destination="eGn-2k-2Hj" id="KAE-01-4L7"/>
-                        <outlet property="usernameField" destination="ADp-iz-qO5" id="vxZ-1k-dxd"/>
+                        <outlet property="passwordField" destination="eGn-2k-2Hj" id="oiW-we-UGe"/>
+                        <outlet property="usernameField" destination="ADp-iz-qO5" id="rKS-Fa-PjY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PoC-EX-uA5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

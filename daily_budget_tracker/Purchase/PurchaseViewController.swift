@@ -11,12 +11,6 @@ import ParseSwift
 
 class PurchaseViewController: UIViewController {
     
-    //@IBOutlet weak var previewImageView: UIImageView!
-    //@IBOutlet weak var uploadButton: UIBarButtonItem!
-    //@IBOutlet weak var previewImageView: UIImageView!
-    //@IBOutlet weak var titleTextField: UITextField!
-    //@IBOutlet weak var costTextField: UITextField!
-    //@IBOutlet weak var descriptionTextField: UITextField!
     
     @IBOutlet weak var uploadButton: UIBarButtonItem!
     
@@ -33,11 +27,9 @@ class PurchaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
     
-    @IBAction func onPickedImageTapped(_ sender: Any) {
+    @IBAction func onPickedImageTapped(_ sender: UIBarButtonItem) {
         var config = PHPickerConfiguration()
         
         config.filter = .images
@@ -53,9 +45,30 @@ class PurchaseViewController: UIViewController {
         present(picker, animated: true)
     }
     
-    @IBAction func onUploadTapped(_ sender: Any) {
+    @IBAction func onUploadTapped(_ sender: UIBarButtonItem) {
         view.endEditing(true)
-        
+        if var currentUser = User.current {
+
+            // Update the `lastPostedDate` property on the user with the current date.
+            currentUser.timePosted = Date()
+
+            // Save updates to the user (async)
+            currentUser.save { [weak self] result in
+                switch result {
+                case .success(let user):
+                    print("✅ User Saved! \(user)")
+
+                    // Switch to the main thread for any UI updates
+                    DispatchQueue.main.async {
+                        // Return to previous view controller
+                        self?.navigationController?.popViewController(animated: true)
+                    }
+
+                case .failure(let error):
+                    self?.showAlert(description: error.localizedDescription)
+                }
+            }
+        }
         guard let image = pickedImage,
               let imageData = image.jpegData(compressionQuality: 0.1) else {
             return
@@ -70,7 +83,7 @@ class PurchaseViewController: UIViewController {
         post.title = titleTextField.text
         post.cost = costTextField.text
         
-        //post.user = User.current
+        post.user = User.current
         
         // Save post (async)
         post.save { [weak self] result in

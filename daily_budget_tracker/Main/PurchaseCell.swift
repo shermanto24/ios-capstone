@@ -19,6 +19,9 @@ class PurchaseCell: UITableViewCell {
     
     @IBOutlet weak var costLabel: UILabel!
     
+    @IBOutlet weak var totalLabel: UILabel!
+    
+    
     private var imageDataRequest: DataRequest?
 
     func configure(with post: Post) {
