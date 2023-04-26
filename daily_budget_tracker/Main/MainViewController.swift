@@ -11,6 +11,9 @@ import ParseSwift
 class MainViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    private let refreshControl = UIRefreshControl()
+    
     private var posts = [Post]() {
         didSet {
             tableView.reloadData()
@@ -51,6 +54,8 @@ class MainViewController: UIViewController {
     @IBAction func onLogOutTapped(_ sender: Any) {
         showConfirmLogoutAlert()
     }
+    
+    
     private func showAlert(description: String? = nil) {
         let alertController = UIAlertController(title: "Oops...", message: "\(description ?? "Please try again...")", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default)

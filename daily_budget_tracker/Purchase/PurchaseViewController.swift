@@ -9,18 +9,19 @@ import UIKit
 import PhotosUI
 import ParseSwift
 
-class PurchaseViewController: UIViewController {
+class PurchaseViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     
     @IBOutlet weak var uploadButton: UIBarButtonItem!
+   
     
     @IBOutlet weak var previewImageView: UIImageView!
     
     @IBOutlet weak var titleTextField: UITextField!
     
+    
     @IBOutlet weak var costTextField: UITextField!
     
-    @IBOutlet weak var descriptionTextField: UITextField!
     
     
     private var pickedImage: UIImage?
@@ -79,7 +80,7 @@ class PurchaseViewController: UIViewController {
         var post = Post()
         
         post.imageFile = imageFile
-        post.caption = descriptionTextField.text
+      //  post.caption = descriptionTextField.text
         post.title = titleTextField.text
         post.cost = costTextField.text
         
@@ -102,6 +103,35 @@ class PurchaseViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    
+    @IBAction func onTakePhotoTapped(_ sender: Any) {
+        // TODO: Pt 2 - Present camera
+        // Make sure the user's camera is available
+        // NOTE: Camera only available on physical iOS device, not available on simulator.
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+            print("❌📷 Camera not available")
+            return
+        }
+
+        // Instantiate the image picker
+        let imagePicker = UIImagePickerController()
+
+        // Shows the camera (vs the photo library)
+        imagePicker.sourceType = .camera
+
+        // Allows user to edit image within image picker flow (i.e. crop, etc.)
+        // If you don't want to allow editing, you can leave out this line as the default value of `allowsEditing` is false
+        imagePicker.allowsEditing = true
+
+        // The image picker (camera in this case) will return captured photos via it's delegate method to it's assigned delegate.
+        // Delegate assignee must conform and implement both `UIImagePickerControllerDelegate` and `UINavigationControllerDelegate`
+        imagePicker.delegate = self
+
+        // Present the image picker (camera)
+        present(imagePicker, animated: true)
+
     }
     
     @IBAction func onViewTapped(_ sender: Any) {
@@ -159,3 +189,6 @@ class PurchaseViewController: UIViewController {
             }
         }
     }
+
+
+

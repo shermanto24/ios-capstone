@@ -195,7 +195,7 @@
         <!--Purchase View Controller-->
         <scene sceneID="LfI-oF-oyB">
             <objects>
-                <viewController id="Tmh-sY-Xxo" userLabel="Purchase View Controller" customClass="PurchaseViewController" sceneMemberID="viewController">
+                <viewController id="Tmh-sY-Xxo" userLabel="Purchase View Controller" customClass="PurchaseViewController" customModule="daily_budget_tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lBP-bT-YvJ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -270,17 +270,27 @@
                         <rightBarButtonItems>
                             <barButtonItem title="Upload" id="49t-r2-bxS" userLabel="Upload Button">
                                 <connections>
-                                    <action selector="onUploadTapped:" destination="Tmh-sY-Xxo" id="OSS-Mk-viz"/>
+                                    <action selector="onUploadTapped:" destination="Tmh-sY-Xxo" id="L34-hc-3tA"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="camera" catalog="system" id="RlB-e0-Nib" userLabel="Camera Button"/>
+                            <barButtonItem title="Item" image="camera" catalog="system" id="RlB-e0-Nib" userLabel="Camera Button">
+                                <connections>
+                                    <action selector="takePhotoTapped:" destination="Tmh-sY-Xxo" id="ndp-cp-qYl"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem image="photo" catalog="system" id="UDH-Ga-oQU" userLabel="Pick Image Button">
                                 <connections>
-                                    <action selector="onPickedImageTapped:" destination="Tmh-sY-Xxo" id="Qp2-jA-GBO"/>
+                                    <action selector="onPickedImageTapped:" destination="Tmh-sY-Xxo" id="VVt-iY-0TM"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="costTextField" destination="lJ7-ut-cN7" id="Ww7-g7-5Kp"/>
+                        <outlet property="previewImageView" destination="EDZ-E7-h97" id="LaD-7S-3iX"/>
+                        <outlet property="titleTextField" destination="6LT-By-gfu" id="kfH-ra-nEx"/>
+                        <outlet property="uploadButton" destination="49t-r2-bxS" id="xBx-E8-1Ix"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xB2-lk-ogK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="3nn-oX-U8R">
