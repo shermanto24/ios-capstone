@@ -294,7 +294,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="o8A-Lg-LCb">
             <objects>
-                <viewController id="vnA-dK-VjJ" userLabel="Sign Up View Controller" customClass="SignUpViewViewController" customModule="daily_budget_tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vnA-dK-VjJ" userLabel="Sign Up View Controller" customClass="SignUpViewController" customModule="daily_budget_tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UH1-Wz-m5j">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -368,6 +368,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="JQi-8b-VsI"/>
                     <connections>
+                        <outlet property="emailField" destination="DDz-ma-1ce" id="Rr5-eI-3d0"/>
                         <outlet property="passwordField" destination="eGn-2k-2Hj" id="oiW-we-UGe"/>
                         <outlet property="usernameField" destination="ADp-iz-qO5" id="rKS-Fa-PjY"/>
                     </connections>
