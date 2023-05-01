@@ -107,7 +107,6 @@
         <!--Main View Controller-->
         <scene sceneID="pXI-b9-f8b">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Dlt-Fv-g6X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="Cna-1o-gLw" userLabel="Main View Controller" customClass="MainViewController" customModule="daily_budget_tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yPg-ib-MYX">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -216,6 +215,7 @@
                         <outlet property="tableView" destination="5QA-9Y-nY6" id="YaB-0l-DTq"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dlt-Fv-g6X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="997.70992366412213" y="807.74647887323943"/>
         </scene>
@@ -303,7 +303,7 @@
                             </barButtonItem>
                             <barButtonItem title="Item" image="camera" catalog="system" id="RlB-e0-Nib" userLabel="Camera Button">
                                 <connections>
-                                    <action selector="takePhotoTapped:" destination="Tmh-sY-Xxo" id="ndp-cp-qYl"/>
+                                    <action selector="onTakePhotoTapped:" destination="Tmh-sY-Xxo" id="fKd-T2-UX7"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="photo" catalog="system" id="UDH-Ga-oQU" userLabel="Pick Image Button">
