@@ -21,7 +21,7 @@
 		DAE962E529EC973B006C7126 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE962E429EC973B006C7126 /* MainViewController.swift */; };
 		DAE962F029F5DD9B006C7126 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DAE962EF29F5DD9B006C7126 /* Alamofire */; };
 		DAE962F329F5DDAC006C7126 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = DAE962F229F5DDAC006C7126 /* AlamofireImage */; };
-		DAE962F729F5E02E006C7126 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE962F629F5E02E006C7126 /* Post.swift */; };
+		DAE962F729F5E02E006C7126 /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE962F629F5E02E006C7126 /* Purchase.swift */; };
 		DAE962F929F5E2E4006C7126 /* PurchaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE962F829F5E2E4006C7126 /* PurchaseCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +39,7 @@
 		DAE962DC29EC8F89006C7126 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DAE962DE29EC8F9A006C7126 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		DAE962E429EC973B006C7126 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		DAE962F629F5E02E006C7126 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		DAE962F629F5E02E006C7126 /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
 		DAE962F829F5E2E4006C7126 /* PurchaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,7 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				DAE962D929EC677A006C7126 /* User.swift */,
-				DAE962F629F5E02E006C7126 /* Post.swift */,
+				DAE962F629F5E02E006C7126 /* Purchase.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -216,7 +216,7 @@
 				DAE962C129E64100006C7126 /* AppDelegate.swift in Sources */,
 				DAE962DD29EC8F89006C7126 /* LoginViewController.swift in Sources */,
 				DAE962C329E64100006C7126 /* SceneDelegate.swift in Sources */,
-				DAE962F729F5E02E006C7126 /* Post.swift in Sources */,
+				DAE962F729F5E02E006C7126 /* Purchase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     
     private let refreshControl = UIRefreshControl()
     
-    private var posts = [Post]() {
+    private var purchases = [Purchase]() {
         didSet {
             tableView.reloadData()
             
@@ -34,23 +34,23 @@ class MainViewController: UIViewController {
         queryPosts()
     }
     private func queryPosts() {
-        let query = Post.query()
+        let query = Purchase.query()
             .include("user")
             .order([.descending("createdAt")])
 
         // Fetch objects (posts) defined in query (async)
         query.find { [weak self] result in
             switch result {
-            case .success(let posts):
+            case .success(let purchases):
                 // Update local posts property with fetched posts
-                self?.posts = posts
+                self?.purchases = purchases
             case .failure(let error):
                 self?.showAlert(description: error.localizedDescription)
             }
         }
 
     }
-    // NOT WORKING
+
     @IBAction func onLogOutTapped(_ sender: Any) {
         showConfirmLogoutAlert()
     }
@@ -78,14 +78,14 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        return purchases.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PurchaseCell", for: indexPath) as? PurchaseCell else {
             return UITableViewCell()
         }
-        cell.configure(with: posts[indexPath.row])
+        cell.configure(with: purchases[indexPath.row])
         return cell
     }
 }

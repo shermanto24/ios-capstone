@@ -8,7 +8,7 @@
 import Foundation
 import ParseSwift
 
-struct Post: ParseObject {
+struct Purchase: ParseObject {
     var objectId: String?
     var createdAt: Date?
     var updatedAt: Date?
@@ -18,6 +18,6 @@ struct Post: ParseObject {
     var caption: String?
     var title: String?
     var imageFile: ParseFile?
-    var cost: String?
+    var cost: Double?
     var user: User?
 }

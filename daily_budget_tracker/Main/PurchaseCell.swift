@@ -24,12 +24,17 @@ class PurchaseCell: UITableViewCell {
     
     private var imageDataRequest: DataRequest?
 
-    func configure(with post: Post) {
+    func configure(with purchase: Purchase) {
         // title
-        titleLabel.text = post.title
+        if purchase.title != nil {
+            titleLabel.text = purchase.title
+        }
+        else {
+            titleLabel.text = ""
+        }
 
         // Image
-        if let imageFile = post.imageFile,
+        if let imageFile = purchase.imageFile,
            let imageUrl = imageFile.url {
             
             // Use AlamofireImage helper to fetch remote image from URL
@@ -46,11 +51,24 @@ class PurchaseCell: UITableViewCell {
         }
 
         // Caption
-        descriptionLabel.text = post.caption
+        if purchase.caption != nil {
+            descriptionLabel.text = purchase.caption
+        }
+        else {
+            descriptionLabel.text = ""
+        }
+        
+        // Cost
+        if purchase.cost != nil {
+            costLabel.text = "$" + String(format: "%.2f", purchase.cost!)
+        }
+        else {
+            costLabel.text = ""
+        }
 
         // Date
         /*
-        if let date = post.createdAt {
+        if let date = purchase.createdAt {
             dateLabel.text = DateFormatter.postFormatter.string(from: date)
         }
          */

@@ -22,6 +22,7 @@ class PurchaseViewController: UIViewController, UIImagePickerControllerDelegate 
     
     @IBOutlet weak var costTextField: UITextField!
     
+    @IBOutlet weak var descriptionTextField: UITextField!
     
     
     private var pickedImage: UIImage?
@@ -77,23 +78,26 @@ class PurchaseViewController: UIViewController, UIImagePickerControllerDelegate 
         
         let imageFile = ParseFile(name: "image.jpg", data: imageData)
         
-        var post = Post()
+        var purchase = Purchase()
         
-        post.imageFile = imageFile
-      //  post.caption = descriptionTextField.text
-        post.title = titleTextField.text
-        post.cost = costTextField.text
+        purchase.imageFile = imageFile
+        purchase.caption = descriptionTextField.text
+        purchase.title = titleTextField.text
         
-        post.user = User.current
+        // needs error checking in the app to see if it's actually a double
+        purchase.cost = Double(costTextField.text!)
         
-        // Save post (async)
-        post.save { [weak self] result in
+        purchase.user = User.current
+        purchase.createdAt = Date()
+        
+        // Save purchase (async)
+        purchase.save { [weak self] result in
             
             // Switch to the main thread for any UI updates
             DispatchQueue.main.async {
                 switch result {
-                case .success(let post):
-                    print("✅ Post Saved! \(post)")
+                case .success(let purchase):
+                    print("✅ Purchase Saved! \(purchase)")
 
                     // Return to previous view controller
                     self?.navigationController?.popViewController(animated: true)
@@ -179,10 +183,9 @@ class PurchaseViewController: UIViewController, UIImagePickerControllerDelegate 
                     DispatchQueue.main.async {
                         
                         // Set image on preview image view
-                        // UNCOMMENT WHEN IT WORKS
-                        //self?.previewImageView.image = image
+                        self?.previewImageView.image = image
                         
-                        // Set image to use when saving post
+                        // Set image to use when saving purchase
                         self?.pickedImage = image
                     }
                 }
