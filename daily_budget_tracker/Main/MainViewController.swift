@@ -12,6 +12,8 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var totalSpentLabel: UINavigationItem!
+    
     private let refreshControl = UIRefreshControl()
     
     private var purchases = [Purchase]() {
@@ -26,13 +28,21 @@ class MainViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.allowsSelection = false
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
         queryPosts()
+        
+        var totalSpentString = totalSpentLabel.title!
+        let index = totalSpentString.index(totalSpentString.startIndex, offsetBy: 14)
+        totalSpentString.removeSubrange(index...)
+        totalSpentString += String(format: "%.2f", totalCost)
+        
+        totalSpentLabel.title! = totalSpentString
     }
+    
     private func queryPosts() {
         let query = Purchase.query()
             .include("user")

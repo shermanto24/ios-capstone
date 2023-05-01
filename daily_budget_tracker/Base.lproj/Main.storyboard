@@ -198,7 +198,7 @@
                             <constraint firstItem="5QA-9Y-nY6" firstAttribute="bottom" secondItem="XlQ-IM-dbC" secondAttribute="bottom" id="kap-qs-8Tr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Total Spent: $0.00" id="z3w-g9-Qx6" userLabel="Total Spent Title">
+                    <navigationItem key="navigationItem" title="Total Spent: $" id="z3w-g9-Qx6" userLabel="Total Spent Title">
                         <barButtonItem key="backBarButtonItem" title=" " id="WD6-81-w1H"/>
                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="qdL-on-3ME" userLabel="Log Out Button">
                             <connections>
@@ -213,6 +213,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="5QA-9Y-nY6" id="YaB-0l-DTq"/>
+                        <outlet property="totalSpentLabel" destination="z3w-g9-Qx6" id="IyY-FM-dLn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dlt-Fv-g6X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

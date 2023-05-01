@@ -9,6 +9,8 @@ import UIKit
 import PhotosUI
 import ParseSwift
 
+public var totalCost = 0.0
+
 class PurchaseViewController: UIViewController{
     
     
@@ -86,6 +88,7 @@ class PurchaseViewController: UIViewController{
         
         // needs error checking in the app to see if it's actually a double
         purchase.cost = Double(costTextField.text!)
+        totalCost += purchase.cost!
         
         purchase.user = User.current
         purchase.createdAt = Date()
