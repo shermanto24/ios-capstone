@@ -38,6 +38,7 @@ class SignUpViewController: UIViewController {
         newUser.username = username
         newUser.email = email
         newUser.password = password
+        newUser.totalSpentToday = 0.0
 
         newUser.signup { [weak self] result in
 

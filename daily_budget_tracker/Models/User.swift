@@ -31,4 +31,5 @@ struct User: ParseUser {
     
     var timePosted: Date?
     
+    var totalSpentToday: Double?
 }

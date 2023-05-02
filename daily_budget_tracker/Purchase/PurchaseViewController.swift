@@ -9,8 +9,6 @@ import UIKit
 import PhotosUI
 import ParseSwift
 
-public var totalCost = 0.0
-
 class PurchaseViewController: UIViewController{
     
     
@@ -51,12 +49,35 @@ class PurchaseViewController: UIViewController{
     
     @IBAction func onUploadTapped(_ sender: UIBarButtonItem) {
         view.endEditing(true)
+        
+        guard let image = pickedImage,
+              let imageData = image.jpegData(compressionQuality: 0.1) else {
+            return
+        }
+        
+        let imageFile = ParseFile(name: "image.jpg", data: imageData)
+        
+        var purchase = Purchase()
+        
+        purchase.imageFile = imageFile
+        purchase.caption = descriptionTextField.text
+        purchase.title = titleTextField.text
+        
+        // needs error checking in the app to see if it's actually a double
+        purchase.cost = Double(costTextField.text!)
+        
+        purchase.user = User.current
+        purchase.createdAt = Date()
+        
         if var currentUser = User.current {
-
+            
+            currentUser.totalSpentToday! += purchase.cost!
+            
             // Update the `lastPostedDate` property on the user with the current date.
             currentUser.timePosted = Date()
 
             // Save updates to the user (async)
+            print(currentUser)
             currentUser.save { [weak self] result in
                 switch result {
                 case .success(let user):
@@ -73,27 +94,6 @@ class PurchaseViewController: UIViewController{
                 }
             }
         }
-        guard let image = pickedImage,
-              let imageData = image.jpegData(compressionQuality: 0.1) else {
-            return
-        }
-        
-        let imageFile = ParseFile(name: "image.jpg", data: imageData)
-        
-        var purchase = Purchase()
-        
-        purchase.imageFile = imageFile
-        purchase.caption = descriptionTextField.text
-        purchase.title = titleTextField.text
-        
-        // needs error checking in the app to see if it's actually a double
-        purchase.cost = Double(costTextField.text!)
-        totalCost += purchase.cost!
-        
-        purchase.user = User.current
-        purchase.createdAt = Date()
-        
-        
         
         // Save purchase (async)
         purchase.save { [weak self] result in

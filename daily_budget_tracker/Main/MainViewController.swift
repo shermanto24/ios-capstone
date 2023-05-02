@@ -31,7 +31,6 @@ class MainViewController: UIViewController {
         
         tableView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(onPullToRefresh), for: .valueChanged)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,7 +40,15 @@ class MainViewController: UIViewController {
         var totalSpentString = totalSpentLabel.title!
         let index = totalSpentString.index(totalSpentString.startIndex, offsetBy: 14)
         totalSpentString.removeSubrange(index...)
-        totalSpentString += String(format: "%.2f", totalCost)
+        
+        if var currentUser = User.current, currentUser.totalSpentToday != nil {
+            totalSpentString += String(format: "%.2f", currentUser.totalSpentToday!)
+            print("IN THE IF: " + String( currentUser.totalSpentToday!))
+        }
+        else {
+            totalSpentString += "0.00"
+        }
+        
         
         totalSpentLabel.title! = totalSpentString
     }
