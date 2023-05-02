@@ -30,7 +30,7 @@ class MainViewController: UIViewController {
         tableView.allowsSelection = false
         
         tableView.refreshControl = refreshControl
-
+        refreshControl.addTarget(self, action: #selector(onPullToRefresh), for: .valueChanged)
         
     }
     
@@ -53,11 +53,10 @@ class MainViewController: UIViewController {
             .order([.descending("createdAt")])
             .where("createdAt" >= todayDate)
 
-        // Fetch objects (posts) defined in query (async)
         query.find { [weak self] result in
             switch result {
             case .success(let purchases):
-                // Update local posts property with fetched posts
+
                 self?.purchases = purchases
             case .failure(let error):
                 self?.showAlert(description: error.localizedDescription)
@@ -69,6 +68,13 @@ class MainViewController: UIViewController {
 
     @IBAction func onLogOutTapped(_ sender: Any) {
         showConfirmLogoutAlert()
+    }
+    
+    @objc private func onPullToRefresh() {
+        refreshControl.beginRefreshing()
+        queryPosts { [weak self] in
+            self?.refreshControl.endRefreshing()
+        }
     }
     
     

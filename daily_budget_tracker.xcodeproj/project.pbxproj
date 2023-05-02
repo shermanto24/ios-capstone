@@ -23,6 +23,7 @@
 		DAE962F329F5DDAC006C7126 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = DAE962F229F5DDAC006C7126 /* AlamofireImage */; };
 		DAE962F729F5E02E006C7126 /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE962F629F5E02E006C7126 /* Purchase.swift */; };
 		DAE962F929F5E2E4006C7126 /* PurchaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE962F829F5E2E4006C7126 /* PurchaseCell.swift */; };
+		FEAD24402A00AE86002CC5C0 /* DateForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAD243F2A00AE86002CC5C0 /* DateForm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		DAE962E429EC973B006C7126 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DAE962F629F5E02E006C7126 /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
 		DAE962F829F5E2E4006C7126 /* PurchaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseCell.swift; sourceTree = "<group>"; };
+		FEAD243F2A00AE86002CC5C0 /* DateForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateForm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 		DAE962BF29E64100006C7126 /* daily_budget_tracker */ = {
 			isa = PBXGroup;
 			children = (
+				FEAD243E2A00AE62002CC5C0 /* Extension */,
 				DAE962E329EC972F006C7126 /* Main */,
 				DAE962DB29EC8F71006C7126 /* Login */,
 				922D6F9E29F5C6450000E608 /* Purchase */,
@@ -124,6 +127,14 @@
 				DAE962F829F5E2E4006C7126 /* PurchaseCell.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		FEAD243E2A00AE62002CC5C0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FEAD243F2A00AE86002CC5C0 /* DateForm.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +227,7 @@
 				DAE962C129E64100006C7126 /* AppDelegate.swift in Sources */,
 				DAE962DD29EC8F89006C7126 /* LoginViewController.swift in Sources */,
 				DAE962C329E64100006C7126 /* SceneDelegate.swift in Sources */,
+				FEAD24402A00AE86002CC5C0 /* DateForm.swift in Sources */,
 				DAE962F729F5E02E006C7126 /* Purchase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
