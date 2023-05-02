@@ -29,7 +29,6 @@ Users can track their daily spendings by using this app. By creating an interact
 * User can upload purchases, where a purchase consists of a price along with a picture and/or description
 * App calculates total spending over the course of a day
 * User can sign up and log in
-* App calculates weekly/monthly spending
 
 **Optional Nice-to-have Stories**
 
