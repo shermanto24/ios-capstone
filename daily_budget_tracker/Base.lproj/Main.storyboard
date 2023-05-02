@@ -86,7 +86,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.64068345836878771" green="0.82264046717171713" blue="0.78381003461910992" alpha="0.98934188741721851" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="u9s-KM-bfN" secondAttribute="trailing" constant="40" id="GWl-L9-eHV"/>
                             <constraint firstItem="u9s-KM-bfN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="a5b-fH-lgk"/>
@@ -115,6 +115,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5QA-9Y-nY6">
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" red="0.68879796569999996" green="0.81176471709999998" blue="0.77319471090000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PurchaseCell" rowHeight="509" id="G89-Ni-xva" userLabel="PurchaseCell" customClass="PurchaseCell" customModule="daily_budget_tracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="509"/>
@@ -179,6 +180,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="rIc-DT-xrq" secondAttribute="trailing" constant="16" id="yo7-4h-jw7"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.68879796569999996" green="0.81176471709999998" blue="0.77319471090000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="costLabel" destination="fCU-AY-hZT" id="Xog-SB-9zE"/>
                                             <outlet property="descriptionLabel" destination="F1M-9a-sin" id="Fs8-FG-oqN"/>
@@ -234,7 +236,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Qlo-Hn-LfZ" userLabel="Title and Cost Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="34"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Purchase Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6LT-By-gfu" userLabel="Title Text Field">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Purchased Item" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6LT-By-gfu" userLabel="Title Text Field">
                                                 <rect key="frame" x="0.0" y="0.0" width="285.66666666666669" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -262,7 +264,7 @@
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.artframe" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="EDZ-E7-h97" userLabel="Preview Image View">
                                         <rect key="frame" x="0.0" y="43.666666666666657" width="361" height="358.00000000000011"/>
-                                        <color key="tintColor" systemColor="opaqueSeparatorColor"/>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="361" id="9Sc-ef-c2B"/>
                                             <constraint firstAttribute="height" constant="361" id="xvi-Wq-vIs"/>
@@ -284,7 +286,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="R2D-Sv-4dg"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.64068345839999996" green="0.82264046719999995" blue="0.78381003459999998" alpha="0.98934188739999995" colorSpace="custom" customColorSpace="displayP3"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="R2D-Sv-4dg" firstAttribute="trailing" secondItem="UQR-ha-R5v" secondAttribute="trailing" constant="16" id="FLp-En-JHr"/>
@@ -298,16 +300,19 @@
                     <navigationItem key="navigationItem" id="DJh-2D-8x0">
                         <rightBarButtonItems>
                             <barButtonItem title="Upload" id="49t-r2-bxS" userLabel="Upload Button">
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="onUploadTapped:" destination="Tmh-sY-Xxo" id="L34-hc-3tA"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Item" image="camera" catalog="system" id="RlB-e0-Nib" userLabel="Camera Button">
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="onTakePhotoTapped:" destination="Tmh-sY-Xxo" id="fKd-T2-UX7"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="photo" catalog="system" id="UDH-Ga-oQU" userLabel="Pick Image Button">
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="onPickedImageTapped:" destination="Tmh-sY-Xxo" id="VVt-iY-0TM"/>
                                 </connections>
@@ -398,7 +403,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="83J-sc-1V4"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.64068345839999996" green="0.82264046719999995" blue="0.78381003459999998" alpha="0.98934188739999995" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="aZq-pd-q9j" firstAttribute="centerX" secondItem="UH1-Wz-m5j" secondAttribute="centerX" id="EQj-gw-tVL"/>
                             <constraint firstItem="aZq-pd-q9j" firstAttribute="centerY" secondItem="UH1-Wz-m5j" secondAttribute="centerY" id="Uw0-a2-agA"/>
@@ -482,9 +487,6 @@
         <image name="plus.app" catalog="system" width="128" height="114"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
