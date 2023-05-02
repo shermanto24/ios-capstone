@@ -81,7 +81,8 @@ Users can track their daily spendings by using this app. By creating an interact
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
 
-![7k7r1a](https://user-images.githubusercontent.com/110207696/235594778-c3efb90f-6434-4b8a-8331-b1e59196bec9.gif)
+
+![7k7r1a](https://user-images.githubusercontent.com/110207696/235594942-42642c03-5769-4b1a-ad14-788cc43535ad.gif)
 
 
 ![ezgif-1-e0cf9d42db](https://user-images.githubusercontent.com/110207696/235591901-60422fc0-1b7d-47f5-8570-1c4b21f8a825.gif)
