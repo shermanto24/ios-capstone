@@ -93,6 +93,8 @@ class PurchaseViewController: UIViewController{
         purchase.user = User.current
         purchase.createdAt = Date()
         
+        
+        
         // Save purchase (async)
         purchase.save { [weak self] result in
             

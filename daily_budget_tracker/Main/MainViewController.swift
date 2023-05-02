@@ -29,6 +29,9 @@ class MainViewController: UIViewController {
         tableView.dataSource = self
         tableView.allowsSelection = false
         
+        tableView.refreshControl = refreshControl
+
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,10 +46,12 @@ class MainViewController: UIViewController {
         totalSpentLabel.title! = totalSpentString
     }
     
-    private func queryPosts() {
+    private func queryPosts(completion: (() -> Void)? = nil) {
+        let todayDate = Calendar.current.date(byAdding: .day, value: (0), to: Date())!
         let query = Purchase.query()
             .include("user")
             .order([.descending("createdAt")])
+            .where("createdAt" >= todayDate)
 
         // Fetch objects (posts) defined in query (async)
         query.find { [weak self] result in
@@ -57,6 +62,7 @@ class MainViewController: UIViewController {
             case .failure(let error):
                 self?.showAlert(description: error.localizedDescription)
             }
+            completion?()
         }
 
     }
@@ -64,6 +70,7 @@ class MainViewController: UIViewController {
     @IBAction func onLogOutTapped(_ sender: Any) {
         showConfirmLogoutAlert()
     }
+    
     
     
     private func showAlert(description: String? = nil) {
