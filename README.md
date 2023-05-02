@@ -9,7 +9,7 @@
 
 ## Overview
 ### Description
-Users must first register to use the app. After signing up and logging in, users can upload pictures and/or descriptions of their purchases along with their costs, and the app calculates their total spending over the course of a day. Daily purchases will be visible in the first tab, while weekly/monthly spending will be in a separate tab. This app is meant to help people track and budget their money. 
+Users can track their daily spendings by using this app. By creating an interactive and visual way to see where our money goes we hope to intrigue users to become more aware of their spendings and budgeting skills. This app will allow users to sign up and log in to update their purchases. Users can upload pictures and/or descriptions of their purchases along with their costs, and the app calculates their total spending over the course of a day.  
 
 ### App Evaluation
 
