@@ -81,3 +81,13 @@ Users must first register to use the app. After signing up and logging in, users
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
+
+
+![ezgif-1-114406bf90](https://user-images.githubusercontent.com/110207696/235591509-23866dca-76ff-4972-8b9c-927cfb41359b.gif)
+
+
+![ezgif-1-e0cf9d42db](https://user-images.githubusercontent.com/110207696/235591901-60422fc0-1b7d-47f5-8570-1c4b21f8a825.gif)
+
+
+![ezgif-1-9b60febacd](https://user-images.githubusercontent.com/110207696/235591616-279c671e-a239-4f85-af60-4dc832b396d7.gif)
+
