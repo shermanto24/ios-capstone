@@ -47,7 +47,7 @@ class MainViewController: UIViewController {
     }
     
     private func queryPosts(completion: (() -> Void)? = nil) {
-        let todayDate = Calendar.current.date(byAdding: .day, value: (0), to: Date())!
+        let todayDate = Calendar.current.date(byAdding: .day, value: (-1), to: Date())!
         let query = Purchase.query()
             .include("user")
             .order([.descending("createdAt")])
